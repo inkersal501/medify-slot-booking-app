@@ -1,0 +1,9 @@
+.medify-logo{
+    width: 55%;
+}
+@media (min-width: 1025px) {
+    .navBarContainer{
+        padding-left: 40px !important;
+        padding-right: 40px !important;
+    }
+}
