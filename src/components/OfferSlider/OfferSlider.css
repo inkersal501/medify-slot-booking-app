@@ -1,0 +1,21 @@
+.offerSlider{
+    position: relative;
+    top: -180px;
+}
+  .swiper-pagination-bullet{
+    margin: 0px 10px !important;
+    position: relative;
+  }
+  .swiper-pagination-bullet.swiper-pagination-bullet-active::before {
+    content: "";
+    position: absolute;
+    left:-9px;
+    bottom: -9px; 
+    width: 25px;
+    height: 25px;
+    background-color: rgb(255 255 255 / 10%); 
+    opacity: 1;
+    border-radius: 50%; 
+    transition: background-color 0.3s;
+    border: 1px solid #007bff;
+  } 
