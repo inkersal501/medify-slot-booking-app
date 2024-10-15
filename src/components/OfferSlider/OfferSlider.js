@@ -25,7 +25,7 @@ function OfferSlider() {
         el: '.custom-pagination', // Use a custom pagination element
       }}
       autoplay={{
-        delay: 300000,
+        delay: 3000,
         disableOnInteraction: false,
       }}
       style={{ width: '100%', height: 'auto' }}

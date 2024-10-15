@@ -1,0 +1,16 @@
+.Specialist{
+    max-width: 300px;
+    text-align: center;
+}
+.SpecialistCardlOne{
+    padding: 20px 0px 0px 0px;
+    width:fit-content;
+    height: auto;
+    border-radius: 33px 33px 11px 11px;
+    background-color: #fff;
+    box-shadow: 1px 1px 15px #ccc;
+}
+.cardContent{
+    background: linear-gradient(144.2deg, #E1F3FF 0%, #2AA7FF 100%);
+}
+ 

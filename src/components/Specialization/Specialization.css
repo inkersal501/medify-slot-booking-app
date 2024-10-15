@@ -1,0 +1,21 @@
+.specialization{
+    position: relative;
+    top: -100px;
+}
+.cardImg{
+    width: 25%;
+}
+.specCard{
+    width: 250px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    background-color: #fff;
+    box-shadow: 1px 1px 15px rgba(156, 156, 156, 0.12);
+    border-radius: 11px;
+    color: #656a72;
+}
