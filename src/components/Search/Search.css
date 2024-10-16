@@ -1,5 +1,6 @@
 .searchBox{
     position: relative;
+<<<<<<< HEAD
     top: -110px;
     z-index: 10000;
 }
@@ -27,4 +28,7 @@
     border: 2px solid #2AA8FF;
     background: rgba(42, 167, 255, 0.08);
 
+=======
+    top: -150px;
+>>>>>>> 19e2a9c957348dec9118216dcc21d382370530ea
 }
