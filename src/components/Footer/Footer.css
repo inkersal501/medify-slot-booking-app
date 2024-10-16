@@ -1,0 +1,14 @@
+.Footer{
+    background-color: #1B3C74;
+}
+.socialIconsBox{
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+
+}
