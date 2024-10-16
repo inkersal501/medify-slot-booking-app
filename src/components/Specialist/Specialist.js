@@ -20,8 +20,8 @@ function Specialist() {
         {name: "Dr. Ankur Sharma", specialty: "Medicine", img: image3 },
     ]
   return (
-    <Box sx={{padding:{xs:"20px", lg:"150px 60px 40px 60px"}, background:"#fff"}}>
-      <Typography variant='h4' textAlign="center" fontWeight="bold" color='dark' paddingTop="40px" paddingBottom="40px">Find By Specialization</Typography>
+    <Box sx={{padding:{xs:"20px", lg:"50px 60px 40px 60px"}, background:"#fff"}}>
+      <Typography variant='h4' textAlign="center" fontWeight="bold" color='dark' paddingTop="40px" paddingBottom="40px">Our Medical Specialist</Typography>
 
         <Swiper             
             spaceBetween={5}

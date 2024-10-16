@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
     Button,
     Box,
@@ -18,7 +19,8 @@ import typImg3 from "./images/hospitals.png";
 import typImg4 from "./images/med-store.png";
 import typImg5 from "./images/ambulance.png";
 
-function Search() {
+function Search({showAdditional=true, classname="searchBox"}) {
+  const navigate = useNavigate();
   const stateApi = "https://meddata-backend.onrender.com/states";
   const cityApi = "https://meddata-backend.onrender.com/cities/";
   const [state, setState] = React.useState("");
@@ -72,19 +74,30 @@ function Search() {
     setCity(event.target.value);
   };
 
+  const handleSearch = (e) =>{
+    e.preventDefault();
+    if(state && city)
+      navigate(`/search?state=${state}&city=${city}`);
+    else  
+      window.alert("Select State and City to search");
+  };
   return (
     <Box
       sx={{ padding: { xs: "25px", lg: "0px 80px" } }}
-      className="searchBox"
-    >
+      className={classname}
+    > 
+      
       <Box
         sx={{
-          padding: "60px 40px",
+          padding: "30px 40px",
           background: "#fff",
           borderRadius: "11px",
           boxShadow: "1px 1px 30px rgba(0,0,0,0.12)",
+          display:"block",
+          zIndex:'1000',
         }}
       >
+        <form onSubmit={handleSearch}>
         <Box
           style={{
             display: "flex",
@@ -107,6 +120,14 @@ function Search() {
                 </InputAdornment>
               }
               className="selectBox"
+              required={true}
+              MenuProps={{ 
+                PaperProps: {
+                  style: {
+                    zIndex: 10, 
+                  },
+                },
+              }}
             >
               <MenuItem value="" disabled>
                 State
@@ -130,8 +151,9 @@ function Search() {
                 </InputAdornment>
               }
               className="selectBox"
+              required={true} 
             >
-              <MenuItem value="" disabled>
+              <MenuItem value="" disabled >
                 City
               </MenuItem>
               {cityData.map((city, index)=>(
@@ -139,12 +161,14 @@ function Search() {
               ))} 
             </Select>
           </FormControl>
-          <Button variant="contained">
+          <Button variant="contained" type="submit">
             <SearchIcon sx={{ color: "#fff", marginRight: "10px" }} />
             Search
           </Button>
         </Box>
-        
+        </form>
+
+        {showAdditional && 
         <Box sx={{ marginTop: {xs:"20px", lg:"80px"}, textAlign: "center" }}>
           <Typography variant="h5" color="dark" fontWeight="normal">
             You may be looking for
@@ -169,7 +193,9 @@ function Search() {
             ))}
           </Box>
         </Box>
-      </Box>
+        } 
+
+      </Box> 
     </Box>
   );
 }

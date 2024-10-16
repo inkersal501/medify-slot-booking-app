@@ -9,10 +9,10 @@ import { Pagination, Autoplay } from 'swiper/modules';
 import image1 from './images/image1.png';
 import image2 from './images/image2.png';
 import { Box } from '@mui/material';
-function OfferSlider() {
+function OfferSlider({classname="offerSlider"}) {
   return (
     
-    <Box sx={{padding:{xs:"20px", lg:"150px 60px 40px 60px"}, background:"#fff"}} className="offerSlider">
+    <Box sx={{padding:{xs:"20px", lg:"150px 60px 40px 60px"}, background:"#fff"}} className={classname}>
         <Swiper
       spaceBetween={50}
       slidesPerView={3}

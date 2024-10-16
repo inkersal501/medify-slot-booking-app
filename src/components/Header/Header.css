@@ -4,3 +4,13 @@
     padding: 10px 0px;
     color: #fff; 
 }
+.HeaderOverride{
+    background-color: var(--primary);
+    color: #fff; 
+    text-align: center;
+    padding: 10px 0px;
+    height: 200px;
+    border-radius: 0px 0px 17px 17px;
+    /* position: fixed; */
+    width: 100%;
+}

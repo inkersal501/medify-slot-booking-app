@@ -12,6 +12,8 @@ import {
 import { Menu as MenuIcon } from "@mui/icons-material";
 import logo from "../../assets/images/logo.png";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
+
 
 const pages = [
   "Find Doctors",
@@ -22,7 +24,7 @@ const pages = [
   "Facilities",
 ];
 
-function Navbar() {
+function Navbar({classname="navBarContainer"}) {
   const [openDrawer, setOpenDrawer] = React.useState(false);
 
   const toggleDrawer = (newOpen) => {
@@ -49,8 +51,8 @@ function Navbar() {
 
   return (
     <>
-      <AppBar position="static" sx={{ background: "none", boxShadow: "none" }}>
-        <Container maxWidth="xl" className="navBarContainer">
+      <AppBar position="static" sx={{ background: "none", boxShadow: "none" }} className={classname}>
+        <Container maxWidth="xl" className={classname}>
           <Toolbar disableGutters>
             <Box
               sx={{
@@ -72,7 +74,9 @@ function Navbar() {
             </Box>
 
             <Box sx={{ textAlign: "center" }}>
-              <img src={logo} alt="Logo" className="medify-logo" />
+              <Link to="/">
+                <img src={logo} alt="Logo" className="medify-logo" />
+              </Link>
             </Box>
             <Box
               sx={{

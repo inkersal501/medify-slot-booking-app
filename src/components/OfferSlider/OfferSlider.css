@@ -2,6 +2,12 @@
     position: relative;
     top: -180px;
 }
+.offerSliderOverride{
+  position: relative;
+  top: 0px;
+  margin-bottom: 150px;
+  padding: 50px 60px 40px 60px !important;
+}
   .swiper-pagination-bullet{
     margin: 0px 10px !important;
     position: relative;

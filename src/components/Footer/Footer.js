@@ -7,7 +7,7 @@ import youtubeImg from "./images/youtube.png";
 import pintrestImg from "./images/pintrest.png";
 import "./Footer.css";
 import LinksList from './LinksList';
- 
+import { Link } from "react-router-dom";
 function Footer() {
 
     const arr1 = ["About Us", "Our Pricing", "Our Gallery", "Appointment", "Privacy Policy"];
@@ -27,7 +27,9 @@ function Footer() {
             justifyContent="space-between"
             >
                 <Box sx={{display:"flex",flexDirection:"column", justifyContent:"space-between", padding:"20px 0px"}}>
-                    <img src={logo} alt="Logo" className="medify-logo"/>
+                    <Link to="/">
+                        <img src={logo} alt="Logo" className="medify-logo" />
+                    </Link>
                     <Box sx={{display:'flex', gap:"15px",height:"30px"}}>
                         <Box sx={{height:"30px"}}><Box className='socialIconsBox'><img src={fbImg} alt="Facebook"/></Box></Box>
                         <Box sx={{height:"30px"}}><Box className='socialIconsBox'><img src={twitterImg} alt="Twitter"/></Box></Box>

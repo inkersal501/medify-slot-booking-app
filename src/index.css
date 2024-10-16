@@ -8,6 +8,7 @@ body {
   font-family: 'Poppins', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #eaf2ff;;
 }
 html{
   font-family: 'Poppins', sans-serif !important;
@@ -16,3 +17,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } 
+.css-pa188r-MuiModal-root-MuiPopover-root-MuiMenu-root{
+
+  z-index: 100000 !important;
+}
+.searchResults{
+  position: relative;
+  top: -100px;
+}

@@ -7,3 +7,9 @@
         padding-right: 40px !important;
     }
 }
+.NavbarOverride .MuiContainer-root{
+    background: #fff;
+    box-shadow: 1px 1px 10px #ccc;
+    position: relative;
+    top: -180px;
+}
