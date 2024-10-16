@@ -1,5 +1,6 @@
 import './App.css';
 import Blog from './components/Blog/Blog';
+import DownloadApp from './components/DownloadApp/DownloadApp';
 import Families from './components/Families/Families';
 import Faq from './components/Faq/Faq';
 import Header from './components/Header/Header';
@@ -27,6 +28,7 @@ function App() {
       <Blog />
       <Families />
       <Faq />
+      <DownloadApp />
     </div>
   );
 }
