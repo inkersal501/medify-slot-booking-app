@@ -7,7 +7,7 @@ import youtubeImg from "./images/youtube.png";
 import pintrestImg from "./images/pintrest.png";
 import "./Footer.css";
 import LinksList from './LinksList';
-
+ 
 function Footer() {
 
     const arr1 = ["About Us", "Our Pricing", "Our Gallery", "Appointment", "Privacy Policy"];
