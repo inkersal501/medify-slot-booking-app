@@ -11,6 +11,7 @@ import axios from 'axios';
 import { Stack, Container,  Box,  Typography } from '@mui/material';
 import Hospital from '../components/Hospital/Hospital';
 import Loading from '../components/Loading/Loading';
+import { SnackbarProvider } from 'notistack';
 
 function SearchResults() {
 // eslint-disable-next-line
@@ -19,7 +20,8 @@ function SearchResults() {
   const [hospitals, setHospitals] = useState([]);
   const [state, setState] = useState(searchParams.get("state"));
   const [city, setCity] = useState(searchParams.get("city"));
-  
+
+
   const availableSlots = {
     morning: ["11:30 AM"],
     afternoon: ["12:00 PM", "12:30 PM", "01:30 PM", "02:00 PM", "02:30 PM"],
@@ -31,8 +33,8 @@ function SearchResults() {
       setHospitals([]); 
       try {
         const data = await axios.get(`https://meddata-backend.onrender.com/data?state=${state}&city=${city}`);
-        setHospitals(data.data); 
-        // console.log(hospitals);
+        setHospitals(data.data);  
+        // console.log(data.data)       
         setLoading(false);
       } catch (error) {
         console.log(`Error Occurred: ${error}`); 
@@ -41,7 +43,7 @@ function SearchResults() {
 
     if (state && city) {
       getHospitals();
-    } 
+    }  
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[state,city]);
 
@@ -52,6 +54,7 @@ function SearchResults() {
 
   return (
     <div> 
+      <SnackbarProvider>
         <Header classname="HeaderOverride"/>   
         <Navbar classname="NavbarOverride"/> 
          
@@ -101,6 +104,7 @@ function SearchResults() {
          
         <DownloadApp />
         <Footer />
+      </SnackbarProvider>
     </div>
   )
 }

@@ -23,10 +23,19 @@
   }
   .swiper-button-prev, .swiper-button-next{
     color: #2AA8FF !important;
-    
+    width: 50px;
     
   }
   .swiper-button-prev:after, .swiper-button-next:after{
     font-size: 1rem !important;
     font-weight: 800;
+    border: 1px solid #ccc;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -1px;
   }

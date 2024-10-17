@@ -9,6 +9,7 @@ import App from './App';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from './Theme';
 import SearchResults from './Pages/SearchResults';
+import MyBooking from './Pages/MyBooking';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: "/search",
     element: <SearchResults />,
+  },
+  {
+    path: "/my-booking",
+    element: <MyBooking />,
   },
 ]);
 

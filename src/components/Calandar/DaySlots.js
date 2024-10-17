@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 import "./Calandar.css";
 import { Box, Typography, Stack } from "@mui/material";
 
-function DaySlots({availableSlots}) {
+function DaySlots({availableSlots, setselectedDay}) {
 
   const [daysSlots, setDaysSlots] = useState([]);
   const [totalSlots, setTotalSlots] = useState(0);
@@ -19,21 +19,12 @@ function DaySlots({availableSlots}) {
 
       for (let i=0;i<7;i++) {
         const date = new Date(today);
-        date.setDate(today.getDate() + i);
-
-        let day;
-        if (i===0) {
-            day = "Today";
-        } else if (i===1) {
-            day = "Tomorrow";
-        } else {
-            day = date.toLocaleDateString("en-US", {
+        date.setDate(today.getDate() + i);        
+        let day = date.toLocaleDateString("en-US", {
             weekday: "short",
             day: "numeric",
             month: "short",
-          });
-        }
-
+        }); 
         daysArr.push({
           day: day,
           date: date
@@ -42,6 +33,7 @@ function DaySlots({availableSlots}) {
 
       setDaysSlots(daysArr);
       setActiveDay(daysArr[0].day);
+      setselectedDay(daysArr[0].day);
     };
     const calculateSlots = ()=>{
         const total = availableSlots.morning.length + availableSlots.afternoon.length + availableSlots.evening.length;
@@ -55,6 +47,7 @@ function DaySlots({availableSlots}) {
 
   const handleActive = (day) =>{
     setActiveDay(day);
+    setselectedDay(day);
   };
 
   return (
@@ -67,14 +60,18 @@ function DaySlots({availableSlots}) {
           modules={[Navigation]}
           className="mySwiper"
         >
-            {daysSlots.map((slot)=>(
+            {daysSlots.map((slot, index)=>(
                 <SwiperSlide key={slot.day}>
                     <Stack
                         textAlign='center'
                         onClick={() => handleActive(slot.day)}
                         sx={{ cursor: 'pointer' }}
                     >
-                        <Typography variant="h6" fontSize="14px">{slot.day}</Typography>
+                        <Typography variant="h6" fontSize="14px">
+                            {index===0 && "Today"}
+                            {index===1 && "Tomorrow"}
+                            {index>1 && slot.day}
+                        </Typography>
                         <Typography variant="h6" fontSize="12px" color="rgba(2, 164, 1, 1)">{totalSlots + " Slots Available"}</Typography>
                         <Box
                             height='4px'
@@ -92,7 +89,6 @@ function DaySlots({availableSlots}) {
                 </SwiperSlide>
             ))}
           
-           
         </Swiper>
       </Box>
     </div>

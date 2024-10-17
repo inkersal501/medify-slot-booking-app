@@ -1,4 +1,4 @@
-import { Box, Divider, Stack, Typography, Button } from '@mui/material';
+import { Box, Divider, Stack, Typography, Button, Chip } from '@mui/material';
 import React, { useState } from 'react';
 import likeImg from "../../assets/images/likes.png";
 import hospitalImg from "../../assets/images/hospital.png";
@@ -10,6 +10,15 @@ const [showCalander, setShowCalander] = useState(false);
 const handleshowCalander = ()=>{
   (showCalander)?setShowCalander(false):setShowCalander(true);
 };
+const bookingdateFormat = (date) =>{
+  const dateObj = new Date(date); 
+  const formattedDate = dateObj.toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
+  return formattedDate;
+}
   return (
     <Box sx={{ borderRadius: 2, bgcolor: "#fff", p: { xs: 2, md: 4 } }}>
       <Stack
@@ -92,10 +101,13 @@ const handleshowCalander = ()=>{
             </Typography>                
           </Stack>
           </Box>
-          <Stack
+          
+          <Stack 
             justifyContent={booking ? "flex-start" : "flex-end"}
             minWidth="23%"
           > 
+          {!booking && 
+            <>
             <Typography
               textAlign="center"
               color="rgba(2, 164, 1, 1)"
@@ -109,11 +121,36 @@ const handleshowCalander = ()=>{
               onClick={()=>handleshowCalander()}                          
             >
               Book FREE Center Visit
-            </Button>             
+            </Button> 
+            </>          
+          }   
+          {booking && (
+            <Stack direction="row" spacing={1} mt={{ xs: 2, md: 0 }}>
+              <Chip
+                label={data.bookingTime}
+                variant="outlined"
+                color="primary"
+                sx={{
+                  borderRadius: 1,
+                  fontSize: 14,
+                }}
+              />
+              <Chip
+                label={bookingdateFormat(data.bookingDate)}
+                variant="outlined"
+                color="success"
+                sx={{
+                  borderRadius: 1,
+                  fontSize: 14,
+                }}
+              />
+            </Stack>
+          )}         
           </Stack> 
+
         </Stack>
 
-        {showCalander && <Calandar availableSlots={availableSlots}/> }
+        {showCalander && <Calandar availableSlots={availableSlots} hospitalData={data}/> }
 
     </Box>
   )

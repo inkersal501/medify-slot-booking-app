@@ -103,7 +103,7 @@ function Navbar({classname="navBarContainer"}) {
               ))}
             </Box>
             <Box sx={{ textAlign: { xs: "end", lg: "center" } }}>
-              <Link to="/">
+              <Link to="/my-booking">
                   <Button variant="contained">
                     My Bookings
                   </Button>

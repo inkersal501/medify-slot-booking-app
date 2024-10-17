@@ -6,7 +6,7 @@
 .searchBoxOverride{
     position: relative !important;
     top: -140px !important;
-    z-index: 10000;
+    z-index: 100;
 }
 .selectBox{
     color: #777 !important;
