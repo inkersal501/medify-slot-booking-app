@@ -16,12 +16,12 @@ import { Link } from "react-router-dom";
 
 
 const pages = [
-  "Find Doctors",
-  "Hospitals",
-  "Medicines",
-  "Surgeries",
-  "Software for Provider",
-  "Facilities",
+  ["Find Doctors", "#"],
+  ["Hospitals", "/search"],
+  ["Medicines", "#"],
+  ["Surgeries", "#"],
+  ["Software for Provider", "#"],
+  ["Facilities", "#"],
 ];
 
 function Navbar({classname="navBarContainer"}) {
@@ -39,11 +39,13 @@ function Navbar({classname="navBarContainer"}) {
     >
       <List>
         {pages.map((text, index) => (
-          <ListItem key={text} disablePadding>
+          <Link to={text[1]} key={text[0]}>
+          <ListItem disablePadding>
             <ListItemButton>
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
+          </Link>
         ))}
       </List>
     </Box>
@@ -88,8 +90,8 @@ function Navbar({classname="navBarContainer"}) {
               }}
             >
               {pages.map((page) => (
-                <Button
-                  key={page}
+                <Link to={page[1]} key={page[0]}>
+                <Button                  
                   sx={{
                     my: 2,
                     mx: 2,
@@ -98,8 +100,9 @@ function Navbar({classname="navBarContainer"}) {
                     textTransform: "initial",
                   }}
                 >
-                  {page}
+                  {page[0]}
                 </Button>
+                </Link>
               ))}
             </Box>
             <Box sx={{ textAlign: { xs: "end", lg: "center" } }}>

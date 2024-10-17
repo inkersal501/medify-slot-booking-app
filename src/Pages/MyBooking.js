@@ -63,7 +63,7 @@ function MyBooking() {
          </Box>
         {loading && <Loading />}
 
-        {!loading && bookingData.length === 0 && <Typography variant='h5'>No Booking Found</Typography> }
+        {!loading && bookingData.length === 0 && <Typography variant='h5' sx={{textAlign:"center"}}>No Booking Found</Typography> }
         
         {!loading && bookingData.length > 0 &&         
         <Container maxWidth="xl" sx={{ pt: 0, pb: 10, px: { xs: 0, lg: 8 } }} className="searchResults">

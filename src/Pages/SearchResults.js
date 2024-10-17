@@ -59,8 +59,8 @@ function SearchResults() {
         <Navbar classname="NavbarOverride"/> 
          
         <Search showAdditional={false} classname="searchBoxOverride"/>
-        {loading && <Loading />}
-        {!loading &&
+        {loading && state && city && <Loading />}
+        {!loading && state && city &&
         <Container maxWidth="xl" sx={{ pt: 0, pb: 10, px: { xs: 0, lg: 8 } }} className="searchResults">
           {hospitals.length > 0 && (
             <Box sx={{ mb: 3 }}>

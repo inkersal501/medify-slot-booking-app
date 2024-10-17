@@ -2,6 +2,8 @@ import { Box, Button, Typography } from '@mui/material';
 import React from 'react';
 import "./Hero.css";
 import heroImg from './heroImg.png';
+import { Link } from 'react-router-dom';
+
 function Hero() {
   return (
  
@@ -14,7 +16,7 @@ function Hero() {
                 </Box>
                 <Typography variant='h5' color="#656a72" sx={{margin:"15px 0px"}}>Connect instantly with a 24x7 specialist or choose to video visit a particular doctor.</Typography>
                 <Box sx={{margin:"20px 0px"}} >
-                    <Button variant='contained' sx={{padding:"8px 30px"}}>Find Centers</Button>
+                    <Link to="/search"><Button variant='contained' sx={{padding:"8px 30px"}}>Find Centers</Button></Link>
                 </Box>  
             </Box>
             <Box>
