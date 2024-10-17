@@ -1,17 +1,22 @@
 import { Box, Divider, Stack, Typography, Button } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 import likeImg from "../../assets/images/likes.png";
 import hospitalImg from "../../assets/images/hospital.png";
+import Calandar from '../Calandar/Calandar';
 
 function Hospital({data, availableSlots, booking = false,}) {
  
-
+const [showCalander, setShowCalander] = useState(false);
+const handleshowCalander = ()=>{
+  (showCalander)?setShowCalander(false):setShowCalander(true);
+};
   return (
     <Box sx={{ borderRadius: 2, bgcolor: "#fff", p: { xs: 2, md: 4 } }}>
       <Stack
         direction={{ xs: "column", md: "row" }}
         spacing={{ xs: 1, md: 4 }}
         flexWrap={"wrap"}
+        mb={2}
       >
         <Box
           component="img"
@@ -100,12 +105,16 @@ function Hospital({data, availableSlots, booking = false,}) {
               Available Today
             </Typography>
             <Button
-              variant="contained"                            
+              variant="contained"  
+              onClick={()=>handleshowCalander()}                          
             >
               Book FREE Center Visit
             </Button>             
           </Stack> 
         </Stack>
+
+        {showCalander && <Calandar availableSlots={availableSlots}/> }
+
     </Box>
   )
 }

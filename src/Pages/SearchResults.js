@@ -13,7 +13,7 @@ import Hospital from '../components/Hospital/Hospital';
 import Loading from '../components/Loading/Loading';
 
 function SearchResults() {
-
+// eslint-disable-next-line
   const [searchParams, setSearchparams] = useSearchParams();
   const [loading, setLoading] = useState(true);
   const [hospitals, setHospitals] = useState([]);
@@ -32,7 +32,7 @@ function SearchResults() {
       try {
         const data = await axios.get(`https://meddata-backend.onrender.com/data?state=${state}&city=${city}`);
         setHospitals(data.data); 
-        console.log(hospitals);
+        // console.log(hospitals);
         setLoading(false);
       } catch (error) {
         console.log(`Error Occurred: ${error}`); 
