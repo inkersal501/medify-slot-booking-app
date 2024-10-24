@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'; 
 import adImg from "../assets/images/adImg.png";
 import DownloadApp from '../components/DownloadApp/DownloadApp'; 
+import Faq from '../components/Faq/Faq'; 
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';   
 import Navbar from '../components/Navbar/Navbar'; 
@@ -88,7 +89,7 @@ function MyBooking() {
           </Stack>
         </Container>
         }
-         
+        <Faq />
         <DownloadApp />
         <Footer />
     </div>
